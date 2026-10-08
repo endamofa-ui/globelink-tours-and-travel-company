@@ -1,0 +1,1021 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Globelink Tours & Travel</title>
+  <!-- Font Awesome 6 (free) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Google Fonts: Inter & Poppins for clean modern look -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f8fafc;
+      color: #0a1e2f;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+
+    h1, h2, h3, .logo, .btn {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* ---------- HEADER / NAVIGATION ---------- */
+    header {
+      background-color: #ffffff;
+      box-shadow: 0 8px 20px rgba(0, 20, 30, 0.05);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.9rem 1.5rem;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #0b3b5c;
+      letter-spacing: -0.5px;
+    }
+
+    .logo i {
+      color: #1e88e5;
+      font-size: 2rem;
+    }
+
+    .logo span {
+      color: #f39c12;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.2rem;
+      align-items: center;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #1e2f3e;
+      font-weight: 500;
+      font-size: 1rem;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: #1e88e5;
+    }
+
+    .btn-outline {
+      border: 2px solid #1e88e5;
+      background: transparent;
+      color: #1e88e5;
+      padding: 0.6rem 1.4rem;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .btn-outline:hover {
+      background: #1e88e5;
+      color: white;
+    }
+
+    .btn-primary {
+      background: #1e88e5;
+      border: none;
+      color: white;
+      padding: 0.75rem 1.8rem;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.1s;
+      box-shadow: 0 8px 16px rgba(30, 136, 229, 0.25);
+    }
+
+    .btn-primary:hover {
+      background: #1565c0;
+      transform: translateY(-2px);
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 1.8rem;
+      color: #0b3b5c;
+      cursor: pointer;
+    }
+
+    /* ---------- HERO SECTION ---------- */
+    .hero {
+      position: relative;
+      background: linear-gradient(105deg, rgba(10, 35, 55, 0.85) 0%, rgba(10, 35, 55, 0.4) 100%),
+                  url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1770&q=80') no-repeat center center/cover;
+      min-height: 85vh;
+      display: flex;
+      align-items: center;
+      color: white;
+    }
+
+    .hero-content {
+      max-width: 650px;
+      padding: 4rem 0;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(6px);
+      padding: 0.5rem 1.2rem;
+      border-radius: 40px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 0.3px;
+      margin-bottom: 1.5rem;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 1.2rem;
+      letter-spacing: -1px;
+    }
+
+    .hero h1 span {
+      color: #ffb74d;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      margin-bottom: 2.2rem;
+      max-width: 550px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-hero-primary {
+      background: #f39c12;
+      color: #0a1e2f;
+      border: none;
+      padding: 0.9rem 2.2rem;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      box-shadow: 0 8px 18px rgba(243, 156, 18, 0.3);
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .btn-hero-primary:hover {
+      background: #e67e22;
+      transform: scale(1.02);
+    }
+
+    .btn-hero-secondary {
+      background: transparent;
+      border: 2px solid white;
+      color: white;
+      padding: 0.9rem 2.2rem;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .btn-hero-secondary:hover {
+      background: white;
+      color: #0a1e2f;
+    }
+
+    /* ---------- SEARCH / BOOKING BAR ---------- */
+    .search-section {
+      margin-top: -3rem;
+      position: relative;
+      z-index: 10;
+    }
+
+    .search-card {
+      background: white;
+      border-radius: 24px;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+      padding: 1.8rem 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+
+    .search-item {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      flex: 1 1 180px;
+    }
+
+    .search-item i {
+      font-size: 1.4rem;
+      color: #1e88e5;
+      background: #e3f2fd;
+      padding: 0.7rem;
+      border-radius: 50%;
+    }
+
+    .search-item div {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .search-item label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-weight: 600;
+      color: #5f7d95;
+    }
+
+    .search-item input,
+    .search-item select {
+      border: none;
+      font-size: 1rem;
+      font-weight: 500;
+      color: #0a1e2f;
+      background: transparent;
+      outline: none;
+      font-family: 'Inter', sans-serif;
+      padding: 0.1rem 0;
+      border-bottom: 1px solid transparent;
+      transition: border 0.2s;
+    }
+
+    .search-item input:focus,
+    .search-item select:focus {
+      border-bottom: 1px solid #1e88e5;
+    }
+
+    .search-btn {
+      background: #1e88e5;
+      color: white;
+      border: none;
+      padding: 1rem 2.2rem;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      cursor: pointer;
+      transition: background 0.2s;
+      white-space: nowrap;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .search-btn:hover {
+      background: #0b5e9e;
+    }
+
+    /* ---------- DESTINATIONS ---------- */
+    .section-title {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .section-title h2 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: #0b3b5c;
+      letter-spacing: -0.5px;
+    }
+
+    .section-title p {
+      color: #5f7d95;
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0.8rem auto 0;
+    }
+
+    .destinations {
+      padding: 5rem 0;
+    }
+
+    .destination-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+    }
+
+    .destination-card {
+      background: white;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s;
+      cursor: pointer;
+    }
+
+    .destination-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 25px 40px rgba(0, 0, 0, 0.12);
+    }
+
+    .card-img {
+      height: 220px;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+
+    .card-img::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 50%;
+      background: linear-gradient(to top, rgba(0,0,0,0.5), transparent);
+    }
+
+    .card-price {
+      position: absolute;
+      bottom: 1rem;
+      left: 1rem;
+      background: white;
+      padding: 0.4rem 1rem;
+      border-radius: 40px;
+      font-weight: 700;
+      color: #0a1e2f;
+      font-size: 0.95rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      z-index: 2;
+    }
+
+    .card-content {
+      padding: 1.4rem 1.4rem 1.8rem;
+    }
+
+    .card-content h3 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: #0a1e2f;
+      margin-bottom: 0.3rem;
+    }
+
+    .card-content .location {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      color: #5f7d95;
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+
+    .card-content .location i {
+      color: #f39c12;
+    }
+
+    .card-rating {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      color: #f39c12;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    .card-rating span {
+      color: #5f7d95;
+      font-weight: 400;
+      margin-left: 0.3rem;
+    }
+
+    /* ---------- FEATURES / WHY US ---------- */
+    .features {
+      background: #eef6fc;
+      padding: 5rem 0;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2.5rem;
+      text-align: center;
+    }
+
+    .feature-item {
+      background: white;
+      padding: 2.5rem 1.5rem;
+      border-radius: 24px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.02);
+      transition: 0.2s;
+    }
+
+    .feature-item:hover {
+      box-shadow: 0 18px 30px rgba(30, 136, 229, 0.08);
+      transform: translateY(-4px);
+    }
+
+    .feature-icon {
+      font-size: 2.5rem;
+      color: #1e88e5;
+      margin-bottom: 1.2rem;
+    }
+
+    .feature-item h3 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 0.6rem;
+      color: #0a1e2f;
+    }
+
+    .feature-item p {
+      color: #5f7d95;
+      font-size: 0.95rem;
+    }
+
+    /* ---------- TESTIMONIALS ---------- */
+    .testimonials {
+      padding: 5rem 0;
+    }
+
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .testimonial-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 24px;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.04);
+      border: 1px solid #e3edf5;
+    }
+
+    .testimonial-card i.fa-quote-left {
+      color: #1e88e5;
+      opacity: 0.3;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .testimonial-card p {
+      color: #1e2f3e;
+      font-size: 1rem;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+      font-style: italic;
+    }
+
+    .testimonial-user {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .testimonial-user img {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .testimonial-user h4 {
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    .testimonial-user span {
+      color: #5f7d95;
+      font-size: 0.85rem;
+    }
+
+    /* ---------- CTA ---------- */
+    .cta {
+      background: linear-gradient(135deg, #0b3b5c 0%, #1e88e5 100%);
+      border-radius: 40px;
+      padding: 4rem 3rem;
+      text-align: center;
+      color: white;
+      margin: 3rem auto 5rem;
+      max-width: 1100px;
+    }
+
+    .cta h2 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+    }
+
+    .cta p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+      margin-bottom: 2rem;
+      max-width: 550px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta .btn-hero-primary {
+      background: #f39c12;
+      color: #0a1e2f;
+      padding: 1rem 3rem;
+      font-size: 1.1rem;
+    }
+
+    /* ---------- FOOTER ---------- */
+    footer {
+      background: #0a1e2f;
+      color: #cbd5e1;
+      padding: 3rem 0 2rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .footer-col h4 {
+      color: white;
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin-bottom: 1.2rem;
+      letter-spacing: 0.3px;
+    }
+
+    .footer-col p {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      opacity: 0.8;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col ul li {
+      margin-bottom: 0.7rem;
+    }
+
+    .footer-col ul a {
+      color: #cbd5e1;
+      text-decoration: none;
+      transition: color 0.2s;
+      font-size: 0.95rem;
+    }
+
+    .footer-col ul a:hover {
+      color: #f39c12;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .social-icons a {
+      background: rgba(255, 255, 255, 0.08);
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      color: white;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .social-icons a:hover {
+      background: #1e88e5;
+      transform: translateY(-3px);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 1.8rem;
+      text-align: center;
+      font-size: 0.9rem;
+      opacity: 0.7;
+    }
+
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width: 900px) {
+      .hero h1 {
+        font-size: 2.8rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        padding: 2rem;
+        gap: 1.5rem;
+        box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+        border-radius: 0 0 24px 24px;
+        z-index: 99;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .nav-links .btn-outline {
+        width: 100%;
+        text-align: center;
+      }
+
+      .search-card {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1.2rem;
+      }
+
+      .search-item {
+        flex: 1 1 auto;
+      }
+
+      .search-btn {
+        justify-content: center;
+      }
+
+      .hero h1 {
+        font-size: 2.3rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+
+      .cta {
+        padding: 3rem 1.5rem;
+      }
+
+      .cta h2 {
+        font-size: 1.8rem;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .section-title h2 {
+        font-size: 1.8rem;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========== HEADER ========== -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <i class="fas fa-globe-americas"></i>
+        Globelink<span>.</span>
+      </div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="#">Destinations</a></li>
+        <li><a href="#">Tours</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><button class="btn-outline" id="signInBtn">Sign In</button></li>
+      </ul>
+      <div class="menu-toggle" id="menuToggle">
+        <i class="fas fa-bars"></i>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <i class="fas fa-map-pin" style="margin-right: 6px;"></i> Trusted by 50,000+ travelers
+        </div>
+        <h1>Discover the world <br>with <span>Globelink</span></h1>
+        <p>Curated tours, exclusive deals, and unforgettable experiences across 120+ countries. Your journey begins here.</p>
+        <div class="hero-buttons">
+          <button class="btn-hero-primary" id="exploreBtn"><i class="fas fa-compass" style="margin-right: 8px;"></i> Explore Tours</button>
+          <button class="btn-hero-secondary" id="watchBtn"><i class="fas fa-play" style="margin-right: 8px;"></i> Watch Video</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SEARCH BAR ========== -->
+  <div class="container search-section">
+    <div class="search-card">
+      <div class="search-item">
+        <i class="fas fa-map-marker-alt"></i>
+        <div>
+          <label>Destination</label>
+          <input type="text" placeholder="Where to?" value="Bali, Indonesia">
+        </div>
+      </div>
+      <div class="search-item">
+        <i class="fas fa-calendar-alt"></i>
+        <div>
+          <label>Check in</label>
+          <input type="date" value="2025-06-15">
+        </div>
+      </div>
+      <div class="search-item">
+        <i class="fas fa-calendar-check"></i>
+        <div>
+          <label>Check out</label>
+          <input type="date" value="2025-06-22">
+        </div>
+      </div>
+      <div class="search-item">
+        <i class="fas fa-user-friends"></i>
+        <div>
+          <label>Guests</label>
+          <select>
+            <option>2 adults, 0 children</option>
+            <option>1 adult</option>
+            <option>2 adults, 2 children</option>
+            <option>Family (4+)</option>
+          </select>
+        </div>
+      </div>
+      <button class="search-btn" id="searchBtn"><i class="fas fa-search"></i> Search</button>
+    </div>
+  </div>
+
+  <!-- ========== DESTINATIONS ========== -->
+  <section class="destinations">
+    <div class="container">
+      <div class="section-title">
+        <h2>Popular Destinations</h2>
+        <p>Handpicked places our travelers love the most — from tropical beaches to ancient wonders.</p>
+      </div>
+      <div class="destination-grid">
+        <!-- Card 1 -->
+        <div class="destination-card">
+          <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1537996194471-e657df975ab4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+            <span class="card-price">$1,299</span>
+          </div>
+          <div class="card-content">
+            <h3>Bali, Indonesia</h3>
+            <div class="location"><i class="fas fa-map-pin"></i> Southeast Asia</div>
+            <div class="card-rating">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+              <span>(4.8 · 320 reviews)</span>
+            </div>
+          </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="destination-card">
+          <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+            <span class="card-price">$1,899</span>
+          </div>
+          <div class="card-content">
+            <h3>Venice, Italy</h3>
+            <div class="location"><i class="fas fa-map-pin"></i> Europe</div>
+            <div class="card-rating">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <span>(4.9 · 412 reviews)</span>
+            </div>
+          </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="destination-card">
+          <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1502602898657-3e91760cbb34?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+            <span class="card-price">$1,450</span>
+          </div>
+          <div class="card-content">
+            <h3>Paris, France</h3>
+            <div class="location"><i class="fas fa-map-pin"></i> Europe</div>
+            <div class="card-rating">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+              <span>(4.7 · 289 reviews)</span>
+            </div>
+          </div>
+        </div>
+        <!-- Card 4 -->
+        <div class="destination-card">
+          <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+            <span class="card-price">$2,100</span>
+          </div>
+          <div class="card-content">
+            <h3>Dubai, UAE</h3>
+            <div class="location"><i class="fas fa-map-pin"></i> Middle East</div>
+            <div class="card-rating">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <span>(4.9 · 501 reviews)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FEATURES ========== -->
+  <section class="features">
+    <div class="container">
+      <div class="section-title">
+        <h2>Why Globelink?</h2>
+        <p>We make travel seamless, memorable, and tailored to you.</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-item">
+          <div class="feature-icon"><i class="fas fa-hand-holding-heart"></i></div>
+          <h3>Personalized Tours</h3>
+          <p>Custom itineraries built around your interests, pace, and budget.</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+          <h3>Safe & Secure</h3>
+          <p>24/7 support, verified partners, and flexible cancellation policies.</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon"><i class="fas fa-tags"></i></div>
+          <h3>Best Price Guarantee</h3>
+          <p>Find a lower price? We'll match it and give you an extra 5% off.</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon"><i class="fas fa-headset"></i></div>
+          <h3>24/7 Concierge</h3>
+          <p>Real humans ready to help before, during, and after your trip.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== TESTIMONIALS ========== -->
+  <section class="testimonials">
+    <div class="container">
+      <div class="section-title">
+        <h2>Loved by Travelers</h2>
+        <p>Real stories from our Globelink community.</p>
+      </div>
+      <div class="testimonial-grid">
+        <div class="testimonial-card">
+          <i class="fas fa-quote-left"></i>
+          <p>Globelink turned our honeymoon into a fairytale. Every detail was perfect — from the private villa in Bali to the sunset cruise. We didn't lift a finger!</p>
+          <div class="testimonial-user">
+            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah">
+            <div>
+              <h4>Sarah & Mark</h4>
+              <span>Bali Honeymoon</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <i class="fas fa-quote-left"></i>
+          <p>I've traveled with many agencies, but Globelink's attention to detail is unmatched. The local guides were incredible and the itinerary was flawless.</p>
+          <div class="testimonial-user">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="David">
+            <div>
+              <h4>David Chen</h4>
+              <span>Japan Discovery Tour</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <i class="fas fa-quote-left"></i>
+          <p>As a solo traveler, I felt safe and cared for the entire trip. The small group experience made it easy to make friends. Highly recommend!</p>
+          <div class="testimonial-user">
+            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Priya">
+            <div>
+              <h4>Priya Nair</h4>
+              <span>Morocco Adventure</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CTA ========== -->
+  <div class="container">
+    <div class="cta">
+      <h2>Ready for your next adventure?</h2>
+      <p>Join thousands of happy travelers. Get exclusive deals and expert tips straight to your inbox.</p>
+      <button class="btn-hero-primary" id="ctaBtn">Get Started <i class="fas fa-arrow-right" style="margin-left: 8px;"></i></button>
+    </div>
+  </div>
+
+  <!-- ========== FOOTER ========== -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="logo" style="color: white; margin-bottom: 1rem;">
+            <i class="fas fa-globe-americas"></i> Globelink<span>.</span>
+          </div>
+          <p>Making world travel accessible, personal, and unforgettable since 2012.</p>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="#">Destinations</a></li>
+            <li><a href="#">Tours</a></li>
+            <li><a href="#">Deals</a></li>
+            <li><a href="#">Travel Guides</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Press</a></li>
+            <li><a href="#">Partners</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2025 Globelink Tours & Travel. All rights reserved. Designed with <i class="fas fa-heart" style="color: #f39c12;"></i> for explorers.
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== JAVASCRIPT ========== -->
+  <script>
+    (
